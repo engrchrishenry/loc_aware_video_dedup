@@ -13,6 +13,10 @@ The code is tested on Linux with the following prerequisites:
 3. PyTorch 1.11.0 (CUDA 11.3)
 4. Numpy 1.26.4
 
+np
+pil
+joblib
+ 
 ## Dataset Preparation
 
 ### Option 1: Use Pre-computed Data
