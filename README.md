@@ -30,9 +30,8 @@ Download
     python extract_frames_multcore.py --data_path <path_to_fivr_videos> --frame_interval 0.5
     ```
 
-#### Directory structure requirement
-  - `<path_to_fivr_videos>` must contain one subfolder per query ID.
-  - All videos corresponding to the same query ID must be placed inside the same subfolder.
+    - `<path_to_fivr_videos>` must contain one subfolder per query ID.
+    - All videos corresponding to the same query ID must be placed inside the same subfolder.
 
 3. Extract thumbnail features
    
