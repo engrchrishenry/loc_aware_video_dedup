@@ -32,7 +32,7 @@ Download
 
    > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset authors may help.
    
-3. Extract frames.
+2. Extract frames.
     ```bash
     python extract_frames_multcore.py --data_path <path_to_fivr_videos> --frame_interval 0.5
     ```
@@ -40,14 +40,22 @@ Download
     - `<path_to_fivr_videos>` must contain one subfolder per query ID.
     - All videos corresponding to the same query ID must be placed inside the same subfolder.
 
-4. Extract thumbnail features.
+3. Extract thumbnail features.
      ```bash
-      python gen_thumb_ft.py --data_path <path_to_fivr_frames> --thumb_size 12 --global_mean <global_mean_value>
+      python gen_thumb_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_thumbnail_features> --thumb_size 12 --global_mean <global_mean_value>
      ```
      `<global_mean_value>` can be calculated via:
      ```bash
       python get_global_mean.py --data_path <path_to_fivr_frames> --thumb_size 12
      ```
+4. Generate VGG features.
+   ```bash
+      python gen_vgg_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_vgg_features> --batch_size 256
+   ```
+5. Generate fisher vector features.
+   ```bash
+      python gen_vgg_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_vgg_features> --batch_size 256
+   ```
      
    
 
