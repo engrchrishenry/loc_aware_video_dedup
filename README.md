@@ -16,7 +16,9 @@ The code is tested on Linux with the following prerequisites:
 np
 pil
 joblib
-tqdm not sure if will be used or not 
+tqdm
+
+vlfeat-0.9.21
  
 ## Dataset Preparation
 
