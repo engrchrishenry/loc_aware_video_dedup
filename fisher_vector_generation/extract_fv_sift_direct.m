@@ -10,7 +10,7 @@ fv_gmm = gmm(1,1); kd=16; nc=64;
 
 % load and process  data set
 img_path='frames/'; % path to input frames
-save_folder = "output/temp/"; % + path to output folder
+save_folder = "output/fv/"; % + path to output folder
 
 % Count the number of files
 files_temp = dir(fullfile(img_path, '**', '*'));
