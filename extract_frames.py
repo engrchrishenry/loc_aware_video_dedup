@@ -36,7 +36,7 @@ def parse_args():
         '--frame_interval',
         type=float,
         default=0.5,
-        help='Frame sampling interval in seconds. '
+        help='Frame sampling interval in seconds.'
             'Default: 0.5 (extracts 1 frame every 0.5 seconds). '
             'Example: 30 -> extracts 1 frame every 30 seconds.')
     parser.add_argument(
