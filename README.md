@@ -49,6 +49,7 @@ The code is tested on Linux with the following prerequisites:
 ## Feature Generation
 
 - ### Thumbnail Feature
+  Generate thumbnail features
   ```bash
   python gen_thumb_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_thumbnail_features> --global_mean <global_mean_value> --thumb_size 12
   ```
@@ -56,14 +57,17 @@ The code is tested on Linux with the following prerequisites:
   ```bash
   python get_global_mean.py --data_path <path_to_fivr_frames> --thumb_size 12
   ```
+  Generate a single thumbnail feature file
   ```bash
   python gen_single_feature_file.py --feature_path <thumbnail_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
 
 - ### VGG Feature
+  Generate VGG features
   ```bash
   python gen_vgg_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_vgg_features> --batch_size 256
   ```
+  Generate a single VGG feature file
   ```bash
   python gen_single_feature_file.py --feature_path <VGG_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
@@ -76,6 +80,7 @@ The code is tested on Linux with the following prerequisites:
   - Modify VLFeat, trained GMM model, img_path, save_folder paths in [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/gen_fv_ft.m) from [fisher_vector_generation](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/fisher_vector_generation) folder.
   - Run [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) in MATLAB.
 
+  Generate a single fisher vector feature file
   ```bash
   python gen_single_feature_file.py --feature_path <fisher_vector_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
