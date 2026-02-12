@@ -22,20 +22,21 @@ vlfeat-0.9.21
  
 ## Dataset Preparation
 
-### Option 1: Use Pre-computed Data
+<!-- ### Option 1: Use Pre-computed Data -->
 
-Download
+<!--Download -->
 
-### Option 2: Prepare dataset from scratch
+<!--### Option 2: Prepare dataset from scratch -->
 
 1. Download the [FIVR-200K dataset](https://github.com/MKLab-ITI/FIVR-200K/tree/master).
 
     The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. IDs for the unavailable DSVs are provided in [missing_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/missing_videos.txt).
 
    > Note: We downloaded [FIVR-200K dataset](https://github.com/MKLab-ITI/FIVR-200K/tree/master) in 480p.
-   > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset authors may help.
    
-3. Extract frames.
+   > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset authors may help.
+
+2. Extract frames.
    ```bash
    python extract_frames_multcore.py --data_path <path_to_fivr_videos> --frame_interval 0.5
    ```
@@ -43,30 +44,34 @@ Download
    - `<path_to_fivr_videos>` must contain one subfolder per query ID.
    - All videos corresponding to the same query ID must be placed inside the same subfolder.
 
-4. Extract thumbnail features.
-   ```bash
-    python gen_thumb_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_thumbnail_features> --global_mean <global_mean_value> --thumb_size 12
-   ```
-   `<global_mean_value>` required for [gen_thumb_ft.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_thumb_ft.py) can be calculated via:
-   ```bash
-    python get_global_mean.py --data_path <path_to_fivr_frames> --thumb_size 12
-   ```
-5. Generate VGG features.
-   ```bash
-    python gen_vgg_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_vgg_features> --batch_size 256
-   ```
-6. Generate fisher vector features [MATLAB Script].
-   - Download and install [VLFeat](https://www.vlfeat.org/download.html).
-   - Download the trained GMM model [trained_GMM_model.mat](https://mailmissouri-my.sharepoint.com/:u:/g/personal/chffn_umsystem_edu/IQBzyZ_xdtdrSZqW3noZWlj7AQBpr8ZCxQ1SWm-PCCfGLgI?e=66hrQc).
-   - Modify VLFeat, trained GMM model, img_path, save_folder paths in [extract_fv_sift_direct.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) from [fisher_vector_generation](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/fisher_vector_generation) folder.
-   - Run [extract_fv_sift_direct.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) in MATLAB.
+## Feature Generation
+
+- ### Thumbnail Feature
+  Extract thumbnail features.
+  ```bash
+  python gen_thumb_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_thumbnail_features> --global_mean <global_mean_value> --thumb_size 12
+  ```
+  `<global_mean_value>` required for [gen_thumb_ft.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_thumb_ft.py) can be calculated via:
+  ```bash
+  python get_global_mean.py --data_path <path_to_fivr_frames> --thumb_size 12
+  ```
+
+- ### VGG Feature
+
+  Generate VGG features.
+  ```bash
+  python gen_vgg_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_vgg_features> --batch_size 256
+  ```
+
+- ### Fisher Vector Feature
+
+  Generate fisher vector features [MATLAB Script].
+  - Download and install [VLFeat](https://www.vlfeat.org/download.html).
+  - Download the trained GMM model [trained_GMM_model.mat](https://mailmissouri-my.sharepoint.com/:u:/g/personal/chffn_umsystem_edu/IQBzyZ_xdtdrSZqW3noZWlj7AQBpr8ZCxQ1SWm-PCCfGLgI?e=66hrQc).
+  - Modify VLFeat, trained GMM model, img_path, save_folder paths in [extract_fv_sift_direct.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) from [fisher_vector_generation](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/fisher_vector_generation) folder.
+  - Run [extract_fv_sift_direct.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) in MATLAB.
+
 
    
      
    
-
-### Thumbnail FG
-
-#### Feature Generation
-- To generate thumbnail feature:
-```
