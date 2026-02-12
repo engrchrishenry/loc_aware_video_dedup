@@ -8,17 +8,17 @@ This is the official implementation of our IEEE TCVST 2024 paper titled [Fast Vi
 ## Prerequisites
 The code is tested on Linux with the following prerequisites:
 
+#### Python Code
 1. Python 3.13
-2. MATLAB
-3. PyTorch 1.11.0 (CUDA 11.3)
-4. Numpy 1.26.4
+2. PyTorch 1.11.0 (CUDA 11.3)
+3. Numpy
+4. Pillow
+5. Joblib
+6. Tqdm
 
-np
-pil
-joblib
-tqdm
-
-vlfeat-0.9.21
+#### MATLAB Code
+1. MATLAB R2021a
+2. VLFeat 0.9.21
  
 ## Dataset Preparation
 
