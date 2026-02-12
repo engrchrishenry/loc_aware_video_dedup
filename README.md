@@ -16,6 +16,7 @@ The code is tested on Linux with the following prerequisites:
 5. Joblib
 6. Tqdm
 7. Natsort
+8. Scipy
 
 #### MATLAB Code
 1. MATLAB R2021a
