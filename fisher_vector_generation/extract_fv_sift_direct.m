@@ -5,12 +5,12 @@ close all;
 run('vlfeat-0.9.21/toolbox/vl_setup')
 
 % load SIFT GMM model from CDVS data set
-load trained_GMM_model.mat; %
+load trained_GMM_model.mat;
 fv_gmm = gmm(1,1); kd=16; nc=64;
 
 % load and process  data set
-img_path='frames/';
-save_folder = "output/temp/"; % + "/kd" + string(kd) + "_nc" + string(nc) + '/';
+img_path='frames/'; % path to input frames
+save_folder = "output/temp/"; % + path to output folder
 
 % Count the number of files
 files_temp = dir(fullfile(img_path, '**', '*'));
