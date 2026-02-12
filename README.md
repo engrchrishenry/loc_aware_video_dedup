@@ -47,7 +47,6 @@ vlfeat-0.9.21
 ## Feature Generation
 
 - ### Thumbnail Feature
-  Extract thumbnail features.
   ```bash
   python gen_thumb_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_thumbnail_features> --global_mean <global_mean_value> --thumb_size 12
   ```
@@ -57,8 +56,6 @@ vlfeat-0.9.21
   ```
 
 - ### VGG Feature
-
-  Generate VGG features.
   ```bash
   python gen_vgg_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_vgg_features> --batch_size 256
   ```
