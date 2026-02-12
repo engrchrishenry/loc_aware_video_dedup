@@ -32,9 +32,10 @@ Download
 
     The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. IDs for the unavailable DSVs are provided in [missing_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/missing_videos.txt).
 
+   > Note: We downloaded [FIVR-200K dataset](https://github.com/MKLab-ITI/FIVR-200K/tree/master) in 480p.
    > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset authors may help.
    
-2. Extract frames.
+3. Extract frames.
    ```bash
    python extract_frames_multcore.py --data_path <path_to_fivr_videos> --frame_interval 0.5
    ```
