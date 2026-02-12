@@ -5,7 +5,7 @@ close all;
 run('vlfeat-0.9.21/toolbox/vl_setup')
 
 % load SIFT GMM model from CDVS data set
-load data/A0-eigv0-kms-gmm-CDVS-sift-v1.mat; %
+load trained_GMM_model.mat; %
 fv_gmm = gmm(1,1); kd=16; nc=64;
 
 % load and process  data set
