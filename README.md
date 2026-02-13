@@ -35,12 +35,11 @@ The code is tested on Linux with the following prerequisites:
 
 1. Download the [FIVR-200K dataset](https://github.com/MKLab-ITI/FIVR-200K/tree/master).
 
-    The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. IDs for the unavailable DSVs are provided in [missing_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/missing_videos.txt).
-
-   > Note: We downloaded [FIVR-200K dataset](https://github.com/MKLab-ITI/FIVR-200K/tree/master) in 480p.
+    The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. For paper result reproducibility, we provide [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/FIVR_available_videos.txt) the list of 4,960 videos used in our experiments.
    
    > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset authors may help.
-
+2. Download the [VCSL Dataset](https://github.com/alipay/VCSL/tree/main). We used the video links in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. For paper result reproducibility, we provide [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/vcsl_data_process) the list of 6,649 videos used in our experiments.
+3. 
 2. Extract frames.
    ```bash
    python extract_frames_multcore.py --data_path <path_to_fivr_videos> --frame_interval 0.5
