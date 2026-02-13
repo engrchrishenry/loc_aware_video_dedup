@@ -17,6 +17,9 @@ The code is tested on Linux with the following prerequisites:
 6. Tqdm
 7. Natsort
 8. Scipy
+9. Sci-kit Learn
+10. Matplotlib
+11. YAML
 
 #### MATLAB Code
 1. MATLAB R2021a
