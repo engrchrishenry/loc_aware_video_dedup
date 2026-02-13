@@ -88,6 +88,24 @@ The code is tested on Linux with the following prerequisites:
   python gen_single_feature_file.py --feature_path <fisher_vector_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
 
+## Efficient Frame Retrieval via Multiple k-d Tree Setup
+The script [frame_retrieval.py]() does the following:
+- Uses the single feature files generated via [gen_single_feature_file.py]() as input.
+- Trains a PCA model for each feature to reduce the feature dimension.
+- Projects the features to low-dimensional vectors using the trained PCA model.
+- Builds k-d trees via the projected features.
+- Query the k-d trees for frame retrieval
+- Calculates the recall and average time consumption per query frame.
+
+To run this step:
+- Modify the parameters in [config_frame_retrieval.yaml]().
+- Run [frame_retrieval.py]().
+  ```bash
+  python frame_retrieval.py
+  ```
+
+## Video Localization and Retrieval
+
 
    
      
