@@ -89,8 +89,8 @@ The code is tested on Linux with the following prerequisites:
   ```
 
 ## Efficient Frame Retrieval via Multiple k-d Tree Setup
-The script [frame_retrieval.py]() does the following:
-- Uses the single feature files generated via [gen_single_feature_file.py]() as input.
+The script [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py) does the following:
+- Uses the single feature files generated via [gen_single_feature_file.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_single_feature_file.py) as input.
 - Trains a PCA model for each feature to reduce the feature dimension.
 - Projects the features to low-dimensional vectors using the trained PCA model.
 - Builds k-d trees via the projected features.
@@ -98,10 +98,10 @@ The script [frame_retrieval.py]() does the following:
 - Calculates the recall and average time consumption per query frame.
 
 To run this step:
-- Modify the parameters in [config_frame_retrieval.yaml]().
-- Run [frame_retrieval.py]().
+- Modify the parameters in [config_frame_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_frame_retrieval.yaml).
+- Run [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py).
   ```bash
-  python frame_retrieval.py
+  python frame_retrieval.py --config <config_file_path>
   ```
 
 ## Video Localization and Retrieval
