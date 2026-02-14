@@ -20,6 +20,7 @@ The code is tested on Linux with the following prerequisites:
 9. Sci-kit Learn
 10. Matplotlib
 11. YAML
+12. OpenCV Python
 
 #### MATLAB Code
 1. MATLAB R2021a
