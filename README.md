@@ -66,7 +66,7 @@ The code is tested on Linux with the following prerequisites:
     python select_test_videos.py --data_path <path_to_frames> --save_file <output_path_with_filename>
     ```
 
-    > [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
+    > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
 
 ## Feature Generation
 
