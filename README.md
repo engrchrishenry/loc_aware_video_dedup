@@ -35,12 +35,17 @@ The code is tested on Linux with the following prerequisites:
 
 1. Download the [FIVR-200K dataset](https://github.com/MKLab-ITI/FIVR-200K/tree/master).
 
-    The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. For paper result reproducibility, we provide [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/FIVR_available_videos.txt) the list of 4,960 videos used in our experiments.
+    The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. The list of 4,960 videos used in our experiments is provided in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fivr_data_process/FIVR_available_videos.txt).
    
    > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset authors may help.
-2. Download the [VCSL Dataset](https://github.com/alipay/VCSL/tree/main). We used the video links in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. For paper result reproducibility, we provide [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/vcsl_data_process) the list of 6,649 videos used in our experiments.
-3. 
-2. Extract frames.
+
+2. Download the [VCSL Dataset](https://github.com/alipay/VCSL/tree/main).
+
+    We used the urls in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. The uuids for the 6,649 videos used in our experiments are provided in [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/vcsl_data_process).
+
+3. Extract frames.
+   
+   FIVR-200K dataset
    ```bash
    python extract_frames_multcore.py --data_path <path_to_fivr_videos> --frame_interval 0.5
    ```
@@ -48,16 +53,28 @@ The code is tested on Linux with the following prerequisites:
    - `<path_to_fivr_videos>` must contain one subfolder per query ID.
    - All videos corresponding to the same query ID must be placed inside the same subfolder.
 
+   VCSL Dataset
+   ```bash
+   python extract_frames_multcore.py --data_path <path_to_vcsl_videos> --frame_interval 0.5
+   ```
+   
+   - `<path_to_vcsl_videos>` must contain a subfolder with any name. The subfolder must contain all the downloaded videos.
+
+ 4. Prepare list of test videos
+    ```bash
+   python extract_frames_multcore.py --data_path <path_to_vcsl_videos> --frame_interval 0.5
+   ```
+
 ## Feature Generation
 
 - ### Thumbnail Feature
   Generate thumbnail features
   ```bash
-  python gen_thumb_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_thumbnail_features> --global_mean <global_mean_value> --thumb_size 12
+  python gen_thumb_ft.py --data_path <path_to_frames> --out_path <path_to_thumbnail_features> --global_mean <global_mean_value> --thumb_size 12
   ```
   `<global_mean_value>` required for [gen_thumb_ft.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_thumb_ft.py) can be calculated via:
   ```bash
-  python get_global_mean.py --data_path <path_to_fivr_frames> --thumb_size 12
+  python get_global_mean.py --data_path <path_to_frames> --thumb_size 12
   ```
   Generate a single thumbnail feature file
   ```bash
@@ -67,7 +84,7 @@ The code is tested on Linux with the following prerequisites:
 - ### VGG Feature
   Generate VGG features
   ```bash
-  python gen_vgg_ft.py --data_path <path_to_fivr_frames> --out_path <path_to_vgg_features> --batch_size 256
+  python gen_vgg_ft.py --data_path <path_to_frames> --out_path <path_to_vgg_features> --batch_size 256
   ```
   Generate a single VGG feature file
   ```bash
@@ -93,7 +110,7 @@ The script [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_vide
 - Trains a PCA model for each feature to reduce the feature dimension.
 - Projects the features to low-dimensional vectors using the trained PCA model.
 - Builds k-d trees via the projected features.
-- Query the k-d trees for frame retrieval
+- Query the k-d trees for frame retrieval.
 - Calculates the recall and average time consumption per query frame.
 
 To run this step:
