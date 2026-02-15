@@ -21,6 +21,7 @@ The code is tested on Linux with the following prerequisites:
 10. Matplotlib
 11. YAML
 12. OpenCV Python
+13. Sci-kit Image
 
 #### MATLAB Code
 1. MATLAB R2021a
