@@ -95,7 +95,7 @@ The code is tested on Linux with the following prerequisites:
   ```
   Generate a single thumbnail feature file
   ```bash
-  python gen_single_feature_file.py --feature_path <thumbnail_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
+  python gen_single_feature_npy.py --feature_path <thumbnail_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
 
 - ### VGG Feature
@@ -105,7 +105,7 @@ The code is tested on Linux with the following prerequisites:
   ```
   Generate a single VGG feature file
   ```bash
-  python gen_single_feature_file.py --feature_path <VGG_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
+  python gen_single_feature_npy.py --feature_path <VGG_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
 
 - ### Fisher Vector Feature
@@ -118,7 +118,7 @@ The code is tested on Linux with the following prerequisites:
 
   Generate a single fisher vector feature file
   ```bash
-  python gen_single_feature_file.py --feature_path <fisher_vector_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
+  python gen_single_feature_npy.py --feature_path <fisher_vector_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
 
 ## Efficient Frame Retrieval via Multiple k-d Tree Setup
