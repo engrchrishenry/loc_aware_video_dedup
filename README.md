@@ -62,13 +62,25 @@ The code is tested on Linux with the following prerequisites:
    
    - `<path_to_vcsl_videos>` must contain a subfolder with any name. The subfolder must contain all the downloaded videos.
 
- 4. Prepare list of test videos
+ 4. Select test videos
+    
     Run the following to select test videos based on criteria mentioned in our paper. Test data used for experiments in our paper can be found in [test_data_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_FIVR.txt) and [test_data_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_VCSL.txt)
     ```bash
     python select_test_videos.py --data_path <path_to_frames> --save_file <output_path_with_filename>
     ```
 
     > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
+
+  6. Prepare test data
+     
+     Generate normal version of test data as mentioned in our paper.
+     ```bash
+     python gen_test_data_normal.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
+     ```
+     Generate hard version of test data as mentioned in our paper.
+     ```bash
+     python gen_test_data_hard.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
+     ```
 
 ## Feature Generation
 
