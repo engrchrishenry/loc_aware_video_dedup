@@ -122,7 +122,7 @@ The code is tested on Linux with the following prerequisites:
 
 ## Build repository (k-d Trees)
 
-- Build repository
+- ### Build repository
 
   Generate indexes file (.pickle)
   ```bash
@@ -144,7 +144,7 @@ The code is tested on Linux with the following prerequisites:
   - `--index_file` is the .pickle file generated via [gen_index_file.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_index_file.py).
   - `<number_of_train_samples_for_pca>` value of 150000 and 200000 was used for FIVR-200K dataset and VCSL dataset, respectively, in our experiments.
 
-- Build test repository
+- ### Build test repository
 
   Generate text indexes file (.pickle)
   ```bash
@@ -153,19 +153,19 @@ The code is tested on Linux with the following prerequisites:
   
   Generate k-d Trees
   ```bash
-  python build_repo.py \
-    --thumb_file <thumbs_h5_file_path> \
-    --fv_file <fv_h5_file_path> \
-    --vgg_file <vgg_h5_file_path> \
-    --index_file <index_file_path> \
-    --out_path <output_path> \
-    --pca_train_samp <number_of_train_samples_for_pca> \
+  python build_test_repo.py \
+    --thumb_file <thumbs_test_h5_file_path> \
+    --fv_file <fv_test_h5_file_path> \
+    --vgg_file <vgg_test_h5_file_path> \
+    --index_file <index_test_file_path> \
+    --out_path <output_test_path> \
+    --pca_model <pca_model_path> \
     --comps <thumb_pca_components fv_pca_components vgg_pca_components>
   ```
   
   - `--thumb_file`, `--fv_file`, and `--vgg_file` are the paths to the .h5 files generated via [make_hdf5.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/make_hdf5.py).
-  - `--index_file` is the .pickle file generated via [gen_index_file.py]().
-  - `<number_of_train_samples_for_pca>` value of 150000 and 200000 was used for FIVR-200K dataset and VCSL dataset, respectively, in our experiments.
+  - `--index_file` is the .pickle file generated via [gen_index_file.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_index_file.py).
+  - `--pca_model` is the path to the trained PCA model generated after running [build_repo.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/build_repo.py).
   
 
 
