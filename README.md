@@ -35,52 +35,51 @@ The code is tested on Linux with the following prerequisites:
 
 <!--### Option 2: Prepare dataset from scratch -->
 
-1. Download the [FIVR-200K dataset](https://github.com/MKLab-ITI/FIVR-200K/tree/master).
+### Download Dataset
+- FIVR-200K Dataset ([Download Here](https://github.com/MKLab-ITI/FIVR-200K/tree/master))
 
-    The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. The list of 4,960 videos used in our experiments is provided in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt).
-   
-   > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset authors may help.
+   The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. The list of 4,960 videos used in our experiments is provided in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt).
 
-2. Download the [VCSL Dataset](https://github.com/alipay/VCSL/tree/main).
+- VCSL Dataset ([Download Here](https://github.com/alipay/VCSL/tree/main))
+  
+  We used the urls in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. The uuids for the 6,649 videos used in our experiments are provided in [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/VCSL_available_videos.txt).
 
-    We used the urls in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. The uuids for the 6,649 videos used in our experiments are provided in [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/VCSL_available_videos.txt).
+  > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset and VCSL authors may help.
 
-3. Extract frames.
-   
-   FIVR-200K dataset
-   ```bash
-   python extract_frames.py --data_path <path_to_fivr_videos> --frame_interval 0.5
-   ```
-    
-   - `<path_to_fivr_videos>` must contain one subfolder per query ID.
-   - All videos corresponding to the same query ID must be placed inside the same subfolder.
+### Extract frames.
+- FIVR-200K Dataset
+  ```bash
+  python extract_frames.py --data_path <path_to_fivr_videos> --frame_interval 0.5
+  ```
+  
+  - `<path_to_fivr_videos>` must contain one subfolder per query ID.
+  - All videos corresponding to the same query ID must be placed inside the same subfolder.
 
-   VCSL Dataset
-   ```bash
-   python extract_frames.py --data_path <path_to_vcsl_videos> --frame_interval 0.5
-   ```
-   
-   - `<path_to_vcsl_videos>` must contain a subfolder with any name. The subfolder must contain all the downloaded videos.
+- VCSL Dataset
+  ```bash
+  python extract_frames.py --data_path <path_to_vcsl_videos> --frame_interval 0.5
+  ```
+ 
+  - `<path_to_vcsl_videos>` must contain a subfolder with any name. The subfolder must contain all the downloaded videos.
 
- 4. Select test videos
-    
-    Run the following to select test videos based on criteria mentioned in our paper. Test data used for experiments in our paper can be found in [test_data_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_FIVR.txt) and [test_data_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_VCSL.txt)
-    ```bash
-    python select_test_videos.py --data_path <path_to_frames> --save_file <output_path_with_filename>
-    ```
+### Generate test data
+- Select test videos
+
+  Run the following to select test videos based on criteria mentioned in our paper. Test data used for experiments in our paper can be found in [test_data_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_FIVR.txt) and [test_data_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_VCSL.txt)
+  ```bash
+  python select_test_videos.py --data_path <path_to_frames> --save_file <output_path_with_filename>
+  ```
 
     > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
 
-  6. Prepare test data
-     
-     Generate normal version of test data as mentioned in our paper.
-     ```bash
-     python gen_test_data_normal.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
-     ```
-     Generate hard version of test data as mentioned in our paper.
-     ```bash
-     python gen_test_data_hard.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
-     ```
+- Generate normal version (as mentioned in our paper)
+  ```bash
+  python gen_test_data_normal.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
+  ```
+- Generate hard version (as mentioned in our paper)
+  ```bash
+  python gen_test_data_hard.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
+  ```
 
 ## Feature Generation
 
@@ -133,8 +132,10 @@ The code is tested on Linux with the following prerequisites:
     --pca_train_samp <number_of_train_samples_for_pca> \
     --comps <thumb_pca_components fv_pca_components vgg_pca_components>
   ```
-  `--thumb_file` 
-  `<number_of_train_samples_for_pca>` value of 150000 and 200000 was used for FIVR-200K dataset and VCSL dataset, respectively, in our experiments.
+  
+  - `--thumb_file`, `--fv_file`, and `--vgg_file` are the paths to the .h5 files generated via [make_hdf5.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/make_hdf5.py).
+  - `--index_file` is the .pickle file generated via [gen_index_file.py]().
+  - `<number_of_train_samples_for_pca>` value of 150000 and 200000 was used for FIVR-200K dataset and VCSL dataset, respectively, in our experiments.
   
 
 
