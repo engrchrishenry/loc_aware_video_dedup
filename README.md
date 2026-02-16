@@ -93,9 +93,9 @@ The code is tested on Linux with the following prerequisites:
   ```bash
   python get_global_mean.py --data_path <path_to_frames> --thumb_size 12
   ```
-  Generate a single thumbnail feature file
+  Generate a single thumbnail feature file (.h5)
   ```bash
-  python gen_single_feature_npy.py --feature_path <thumbnail_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
+  python make_hdf5.py --feature_path <thumbnail_features_path> --save_file <output_path_with_filename>
   ```
 
 - ### VGG Feature
@@ -103,9 +103,9 @@ The code is tested on Linux with the following prerequisites:
   ```bash
   python gen_vgg_ft.py --data_path <path_to_frames> --out_path <path_to_vgg_features> --batch_size 256
   ```
-  Generate a single VGG feature file
+  Generate a single VGG feature file (.h5)
   ```bash
-  python gen_single_feature_npy.py --feature_path <VGG_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
+  python make_hdf5.py --feature_path <VGG_features_path> --save_file <output_path_with_filename>
   ```
 
 - ### Fisher Vector Feature
@@ -116,9 +116,9 @@ The code is tested on Linux with the following prerequisites:
   - Modify VLFeat, trained GMM model, img_path, save_folder paths in [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/gen_fv_ft.m) from [fisher_vector_generation](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/fisher_vector_generation) folder.
   - Run [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) in MATLAB.
 
-  Generate a single fisher vector feature file
+  Generate a single fisher vector feature file (.h5)
   ```bash
-  python gen_single_feature_npy.py --feature_path <fisher_vector_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
+  python make_hdf5.py --feature_path <fisher_vector_features_path> --save_file <output_path_with_filename>
   ```
 
 ## Build repository (k-d Trees)
@@ -133,7 +133,9 @@ The code is tested on Linux with the following prerequisites:
     --pca_train_samp <number_of_train_samples_for_pca> \
     --comps <thumb_pca_components fv_pca_components vgg_pca_components>
   ```
+  `--thumb_file` 
   `<number_of_train_samples_for_pca>` value of 150000 and 200000 was used for FIVR-200K dataset and VCSL dataset, respectively, in our experiments.
+  
 
 
 ## Efficient Frame Retrieval via Multiple k-d Tree Setup
