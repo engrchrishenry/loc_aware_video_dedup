@@ -121,6 +121,21 @@ The code is tested on Linux with the following prerequisites:
   python gen_single_feature_npy.py --feature_path <fisher_vector_features_path> --save_file <output_path_with_filename> --frame_interval 0.5
   ```
 
+## Build repository (k-d Trees)
+- Build repository
+  ```bash
+  python build_repo.py \
+    --thumb_file <thumbs_h5_file_path> \
+    --fv_file <fv_h5_file_path> \
+    --vgg_file <vgg_h5_file_path> \
+    --index_file <index_file_path> \
+    --out_path <output_path> \
+    --pca_train_samp <number_of_train_samples_for_pca> \
+    --comps <thumb_pca_components fv_pca_components vgg_pca_components>
+  ```
+  `<number_of_train_samples_for_pca>` value of 150000 and 200000 was used for FIVR-200K dataset and VCSL dataset, respectively, in our experiments.
+
+
 ## Efficient Frame Retrieval via Multiple k-d Tree Setup
 The script [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py) does the following:
 - Uses the single feature files generated via [gen_single_feature_file.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_single_feature_file.py) as input.
