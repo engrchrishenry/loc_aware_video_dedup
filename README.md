@@ -167,7 +167,12 @@ The code is tested on Linux with the following prerequisites:
   - `--index_file` is the .pickle file generated via [gen_index_file.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_index_file.py).
   - `--pca_model` is the path to the trained PCA model generated after running [build_repo.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/build_repo.py).
   
-
+## Video Retrieval with Localization
+- Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml). 
+- Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py).
+  ```bash
+  python video_retrieval.py --config <config_file_path>
+  ```
 
 ## Efficient Frame Retrieval via Multiple k-d Tree Setup
 The script [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py) does the following:
@@ -188,6 +193,8 @@ To run this step:
 ## Video Localization and Retrieval
 
 
+## Contact
+In case of questions, feel free to contact at chffn@umsystem.edu or engr.chrishenry@gmail.com
    
      
    
