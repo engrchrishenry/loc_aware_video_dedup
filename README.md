@@ -7,25 +7,36 @@ This is the official implementation of our IEEE TCVST 2024 paper titled [Fast Vi
 
 ## Prerequisites
 The code is tested on Linux with the following prerequisites:
-
-#### Python Code
-1. Python 3.13
+1. Python 3.12
 2. PyTorch 1.11.0 (CUDA 11.3)
-3. Numpy
-4. Pillow
-5. Joblib
-6. Tqdm
-7. Natsort
-8. Scipy
-9. Sci-kit Learn
-10. Matplotlib
-11. YAML
-12. OpenCV Python
-13. Sci-kit Image
+3. MATLAB R2021a
+4. VLFeat 0.9.21
 
-#### MATLAB Code
-1. MATLAB R2021a
-2. VLFeat 0.9.21
+Remaining libraries are available in [requirements.txt]()
+
+## Installation
+
+- Clone this repository
+   ```bash
+   git clone https://github.com/engrchrishenry/loc_aware_video_dedup.git
+   cd loc_aware_video_dedup
+   ```
+
+- Create conda environment
+   ```bash
+   conda create --name dedup python=3.12
+   conda activate dedup
+   ```
+
+- Install dependencies
+  - Install [PyTorch](https://pytorch.org/get-started/locally/).
+  - Install [FFmpeg](www.ffmpeg.org/download.html)
+  - The remaining packages can be installed via:
+    
+     ```bash
+     pip install -r requirements.txt
+     ```
+   - For running MATLAB scripts, you are required to install [VLFeat](https://www.vlfeat.org/download.html).
  
 ## Dataset Preparation
 
@@ -92,6 +103,8 @@ The code is tested on Linux with the following prerequisites:
   ```bash
   python get_global_mean.py --data_path <path_to_frames> --thumb_size 12
   ```
+  In our paper, we used `<global_mean_value>` values of 0.386 and 0.329 for the FIVR-200K and VCSL datasets, respectively. You may use these values if your dataset contains the same videos listed in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt) and [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/VCSL_available_videos.txt).
+  
   Generate a single thumbnail feature file (.h5)
   ```bash
   python make_hdf5.py --feature_path <thumbnail_features_path> --save_file <output_path_with_filename>
@@ -170,6 +183,7 @@ The code is tested on Linux with the following prerequisites:
 ## Video Retrieval with Localization
 - Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml). Read the comments in the [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) for guidance on modifying the parameters.  
 - Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) as follows:
+  
   ```bash
   python video_retrieval.py --config <config_file_path>
   ```
@@ -186,6 +200,7 @@ The script [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_vide
 To run this step:
 - Modify the parameters in [config_frame_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_frame_retrieval.yaml).
 - Run [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py).
+  
   ```bash
   python frame_retrieval.py --config <config_file_path>
   ```
@@ -207,7 +222,7 @@ If you use this work, please cite:
   doi={10.1109/TCSVT.2024.3420422}}
 ```
 
-You may also explore our other work on video deduplication [here](ieeexplore.ieee.org/document/10095417/). Consider citing as follows:
+You may also explore our other work on video deduplication [here](ieeexplore.ieee.org/document/10095417/). Consider citing the following:
 
 ```bibtex
 @INPROCEEDINGS{10095417,
