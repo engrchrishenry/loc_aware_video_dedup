@@ -182,6 +182,17 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   - `--pca_model` is the path to the trained PCA model generated after running [build_repo.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/build_repo.py).
   
 ## Video Retrieval with Localization
+
+<div align="center" style="display: flex; justify-content: center; gap: 200px;">
+  <img src="figures/temporal_consistence_pruning.png" alt="Image 1" width="380"/>
+  <img src="figures/temporal_consistence_pruning_intuition.png" alt="Image 2" width="380"/>
+</div>
+
+
+<div align="center">
+  <img src="figures/temporal_consistence_pruning.png" alt="Overview" width="380"/>
+</div>
+
 - Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml). Read the comments in the [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) for guidance on modifying the parameters.  
 - Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) as follows:
   
