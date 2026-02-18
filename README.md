@@ -12,7 +12,7 @@ The code is tested on Linux with the following prerequisites:
 3. MATLAB R2021a
 4. VLFeat 0.9.21
 
-Remaining libraries are available in [requirements.txt]()
+Remaining libraries are available in [requirements.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/requirements.txt)
 
 ## Installation
 
@@ -123,7 +123,6 @@ Remaining libraries are available in [requirements.txt]()
 - ### Fisher Vector Feature
 
   Generate fisher vector features [MATLAB Script].
-  - Download and install [VLFeat](https://www.vlfeat.org/download.html).
   - Download the trained GMM model [trained_GMM_model.mat](https://mailmissouri-my.sharepoint.com/:u:/g/personal/chffn_umsystem_edu/IQBzyZ_xdtdrSZqW3noZWlj7AQBpr8ZCxQ1SWm-PCCfGLgI?e=66hrQc).
   - Modify VLFeat, trained GMM model, img_path, save_folder paths in [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/gen_fv_ft.m) from [fisher_vector_generation](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/fisher_vector_generation) folder.
   - Run [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) in MATLAB.
@@ -187,7 +186,8 @@ Remaining libraries are available in [requirements.txt]()
   ```bash
   python video_retrieval.py --config <config_file_path>
   ```
-
+  [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) can produce results for varying k values. It outputs results in .txt files in `--out_path`.
+<!--
 ## Efficient Frame Retrieval via Multiple k-d Tree Setup
 The script [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py) does the following:
 - Uses the single feature files generated via [gen_single_feature_file.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_single_feature_file.py) as input.
@@ -204,6 +204,7 @@ To run this step:
   ```bash
   python frame_retrieval.py --config <config_file_path>
   ```
+-->
 
 ## Citation
 
