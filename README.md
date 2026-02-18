@@ -190,7 +190,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
       <sub><b>(a)</b> Temporal Consistence Pruning Algorithm</sub>
     </td>
 
-  <td width="40"></td> <!-- spacing -->
+  <td width="25"></td> <!-- spacing -->
 
   <td align="center" valign="middle">
     <img src="figures/temporal_consistence_pruning_intuition.png" width="380"/><br>
