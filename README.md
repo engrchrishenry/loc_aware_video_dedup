@@ -29,14 +29,13 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
    ```
 
 - Install dependencies
-  - Install [PyTorch](https://pytorch.org/get-started/locally/).
-  - Install [FFmpeg](www.ffmpeg.org/download.html)
-  - The remaining packages can be installed via:
-    
+  1. Install [PyTorch](https://pytorch.org/get-started/locally/).
+  2. Install [FFmpeg](www.ffmpeg.org/download.html).
+  3. The remaining packages can be installed via:
      ```bash
      pip install -r requirements.txt
      ```
-   - For running MATLAB scripts, you are required to install [VLFeat](https://www.vlfeat.org/download.html).
+  4. For running MATLAB scripts, you are required to install [VLFeat](https://www.vlfeat.org/download.html).
  
 ## Dataset Preparation
 
