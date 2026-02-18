@@ -190,8 +190,37 @@ To run this step:
   python frame_retrieval.py --config <config_file_path>
   ```
 
-## Video Localization and Retrieval
+## Citation
 
+If you use this work, please cite:
+
+```bibtex
+@ARTICLE{10577179,
+  author={Henry, Chris and Song, Li and Li, Zhu},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking}, 
+  year={2024},
+  volume={34},
+  number={11},
+  pages={12006-12018},
+  keywords={Vectors;Feature extraction;Task analysis;Principal component analysis;Web sites;Video on demand;Computational modeling;Video deduplication;video retrieval;near-duplicate video retrieval;video copy detection;fisher vector},
+  doi={10.1109/TCSVT.2024.3420422}}
+```
+
+You may also explore our other work on video deduplication [here](ieeexplore.ieee.org/document/10095417/). Consider citing as follows:
+
+```bibtex
+@INPROCEEDINGS{10095417,
+  author={Henry, Chris and Liao, Rijun and Lin, Ruiyuan and Zhang, Zhebin and Sun, Hongyu and Li, Zhu},
+  booktitle={ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Lightweight Fisher Vector Transfer Learning for Video Deduplication}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-5},
+  keywords={Computational modeling;Transfer learning;Transforms;Multilayer perceptrons;Signal processing;Robustness;Encoding;Video deduplication;near-duplicate video detection;near-duplicate video copy detection;fisher vector aggregation},
+  doi={10.1109/ICASSP49357.2023.10095417}}
+```
 
 ## Contact
 In case of questions, feel free to contact at chffn@umsystem.edu or engr.chrishenry@gmail.com
