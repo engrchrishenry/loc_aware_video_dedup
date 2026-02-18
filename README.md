@@ -183,24 +183,22 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   
 ## Video Retrieval with Localization
 
-<p align="center">
-  <table border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td border="0">
-        <img src="figures/temporal_consistence_pruning.png" width="380"/>
-      </td>
-      <td width="50" border="0"></td>
-      <td border="0">
-        <img src="figures/temporal_consistence_pruning_intuition.png" width="380"/>
-      </td>
-    </tr>
-  </table>
-</p>
+<table align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="middle">
+      <img src="figures/temporal_consistence_pruning.png" width="380"/><br>
+      <sub><b>(a)</b> Temporal Consistence Pruning Algorithm</sub>
+    </td>
 
+  <td width="40"></td> <!-- spacing -->
 
-<div align="center">
-  <img src="figures/temporal_consistence_pruning.png" alt="Overview" width="380"/>
-</div>
+  <td align="center" valign="middle">
+    <img src="figures/temporal_consistence_pruning_intuition.png" width="380"/><br>
+    <sub><b>(b)</b> Intuition of Temporal Consistence Pruning</sub>
+  </td>
+  </tr>
+</table>
+
 
 - Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml). Read the comments in the [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) for guidance on modifying the parameters.  
 - Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) as follows:
