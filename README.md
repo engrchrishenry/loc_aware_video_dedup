@@ -183,10 +183,19 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   
 ## Video Retrieval with Localization
 
-<div align="center" style="display: flex; justify-content: center; gap: 200px;">
-  <img src="figures/temporal_consistence_pruning.png" alt="Image 1" width="380"/>
-  <img src="figures/temporal_consistence_pruning_intuition.png" alt="Image 2" width="380"/>
-</div>
+<p align="center">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td border="0">
+        <img src="figures/temporal_consistence_pruning.png" width="380"/>
+      </td>
+      <td width="50" border="0"></td>
+      <td border="0">
+        <img src="figures/temporal_consistence_pruning_intuition.png" width="380"/>
+      </td>
+    </tr>
+  </table>
+</p>
 
 
 <div align="center">
