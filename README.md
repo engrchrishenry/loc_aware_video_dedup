@@ -59,7 +59,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 ### Extract frames.
 - FIVR-200K Dataset
   ```bash
-  python extract_frames.py --data_path <path_to_fivr_videos> --frame_interval 0.5
+  python extract_frames.py --data_path <path_to_fivr_videos> --out_path <path_to_frames> --frame_interval 0.5
   ```
   
   - `<path_to_fivr_videos>` must contain one subfolder per query ID.
@@ -67,7 +67,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
 - VCSL Dataset
   ```bash
-  python extract_frames.py --data_path <path_to_vcsl_videos> --frame_interval 0.5
+  python extract_frames.py --data_path <path_to_vcsl_videos> --out_path <path_to_frames> --frame_interval 0.5
   ```
  
   - `<path_to_vcsl_videos>` must contain a subfolder with any name. The subfolder must contain all the downloaded videos.
