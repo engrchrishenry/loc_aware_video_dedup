@@ -84,11 +84,11 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
 - Generate normal version (as mentioned in our paper)
   ```bash
-  python gen_test_data_normal.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
+  python gen_test_data_normal.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path> --frame_interval 0.5
   ```
 - Generate hard version (as mentioned in our paper)
   ```bash
-  python gen_test_data_hard.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path>
+  python gen_test_data_hard.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path> --frame_interval 0.5
   ```
 
 ## Feature Generation
