@@ -70,7 +70,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   python extract_frames.py --data_path <path_to_vcsl_videos> --out_path <path_to_frames> --frame_interval 0.5
   ```
  
-  - `<path_to_vcsl_videos>` must contain a subfolder with any name. The subfolder must contain all the downloaded videos.
+  - `<path_to_vcsl_videos>` must contain a subfolder named '1'. The subfolder must contain all the downloaded videos.
 
 ### Generate test data
 - Select test videos
