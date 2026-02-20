@@ -105,7 +105,6 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   ```bash
   python get_global_mean.py --data_path <path_to_frames> --thumb_size 12
   ```
-  In our paper, we used `<global_mean_value>` values of 0.386 and 0.329 for the FIVR-200K and VCSL datasets, respectively. You may use these values if your dataset contains the same videos listed in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt) and [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/VCSL_available_videos.txt).
   
   Generate a single thumbnail feature file (.h5)
   ```bash
