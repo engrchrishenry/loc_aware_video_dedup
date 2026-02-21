@@ -75,11 +75,11 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 ### Generate test data
 - Select test videos
 
-  Run the following to select test videos based on criteria mentioned in our paper. Test data used for experiments in our paper can be found in [test_data_normal_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_normal_list_FIVR.txt), [test_data_hard_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_hard_list_FIVR.txt), [test_data_normal_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_normal_list_VCSL.txt), and [test_data_hard_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_hard_list_VCSL.txt)
+  Run the following to select test videos based on criteria mentioned in our paper. Skip this step to use the test data used for experiments in our paper: [test_data_normal_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_normal_list_FIVR.txt), [test_data_hard_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_hard_list_FIVR.txt), [test_data_normal_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_normal_list_VCSL.txt), and [test_data_hard_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_hard_list_VCSL.txt)
   ```bash
   python select_test_videos.py --data_path <path_to_frames> --save_file <output_path_with_filename>
   ```
-  Each line in the resulting .txt file will have the following format: "video_class/video_name frame_id_1 frame_id2 ... frame_id_n".
+  Each line in the resulting .txt file will have the following format: `"video_class/video_name frame_id_1 frame_id2 ... frame_id_n"`.
 
     > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
 
@@ -87,12 +87,10 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   ```bash
   python gen_test_data_normal.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path> --frame_interval 0.5
   ```
-  > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset and VCSL authors may help.
 - Generate hard version (as mentioned in our paper)
   ```bash
   python gen_test_data_hard.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path> --frame_interval 0.5
   ```
-  > Note:  `gen_test_data_hard.py` randomly selects the start and end time from each video listed in `--test_vid_list`. The final video retrieval results may not exactly match the paper
 
 ## Feature Generation
 <div align="center">
