@@ -75,10 +75,11 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 ### Generate test data
 - Select test videos
 
-  Run the following to select test videos based on criteria mentioned in our paper. Test data used for experiments in our paper can be found in [test_data_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_FIVR.txt) and [test_data_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_list_VCSL.txt)
+  Run the following to select test videos based on criteria mentioned in our paper. Test data used for experiments in our paper can be found in [test_data_normal_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_normal_list_FIVR.txt), [test_data_hard_list_FIVR.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_hard_list_FIVR.txt), [test_data_normal_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_normal_list_VCSL.txt), and [test_data_hard_list_VCSL.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/test_data_hard_list_VCSL.txt)
   ```bash
   python select_test_videos.py --data_path <path_to_frames> --save_file <output_path_with_filename>
   ```
+  Each line in the resulting .txt file will have the following format: "video_class/video_name frame_id_1 frame_id2 ... frame_id_n".
 
     > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
 
