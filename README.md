@@ -86,10 +86,12 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   ```bash
   python gen_test_data_normal.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path> --frame_interval 0.5
   ```
+  > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset and VCSL authors may help.
 - Generate hard version (as mentioned in our paper)
   ```bash
   python gen_test_data_hard.py --test_vid_list <test_data_list_path> --frames_path <path_to_frames> --out_path <output_path> --frame_interval 0.5
   ```
+  > Note:  `gen_test_data_hard.py` randomly selects the start and end time from each video listed in `--test_vid_list`. The final video retrieval results may not exactly match the paper
 
 ## Feature Generation
 <div align="center">
