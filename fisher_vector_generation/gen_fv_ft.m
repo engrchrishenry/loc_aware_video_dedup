@@ -61,7 +61,7 @@ for vid_class=1:n_classes
         end
         fprintf('Video class %d/%d (File %d/%d)\n', vid_class, n_classes, file, n_files);
     end
-end % for k
+end
 
 %{
 Uncomment the following o calculate average time consumption per fisher vector computation.
