@@ -21,7 +21,7 @@ total_time = 0;
 a = fv_gmm.m; b = fv_gmm.cov; c = fv_gmm.prior;
 for vid_class=1:n_classes
     folder_path = string(all_folders(vid_class).folder) + '/' + string(all_folders(vid_class).name);    
-    mkdir(save_folder + "/" + all_folders(vid_class).name);
+    mkdir(save_folder + '/' + all_folders(vid_class).name);
     all_files = dir(folder_path);
     all_files = all_files(~ismember({all_files.name} ,{'.','..'}));
     all_files = natsortfiles(all_files);
