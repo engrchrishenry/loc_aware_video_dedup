@@ -33,8 +33,8 @@ for vid_class=1:n_classes
         all_frame_path = all_frame_path(~ismember({all_frame_path.name} ,{'.','..'}));
         all_frame_path = natsortfiles(all_frame_path);
         n_frames = length(all_frame_path);
-        mkdir(save_folder + "/" + all_folders(vid_class).name + '/' + all_files(file).name);
-        xc = string(save_folder) + all_folders(vid_class).name + '/' + string(all_files(file).name);
+        mkdir(save_folder + '/' + all_folders(vid_class).name + '/' + all_files(file).name);
+        xc = string(save_folder) + '/' + all_folders(vid_class).name + '/' + string(all_files(file).name);
         parfor frame=1:n_frames
 %         for frame=1:n_frames # Uncomment for single core processing
             tic;
