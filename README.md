@@ -36,6 +36,14 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
      pip install -r requirements.txt
      ```
   4. For running MATLAB scripts, you are required to install [VLFeat](https://www.vlfeat.org/download.html).
+
+## Quick Demo
+
+- Donwloaded pre-computed FIVR-200K and VCSL datasets [here]().
+- Extract 
+
+
+
  
 ## Dataset Preparation
 
