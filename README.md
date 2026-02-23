@@ -140,7 +140,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
   Generate indexes file (.pickle)
   ```bash
-  python gen_index_file.py --frames_path <path_to_frames> --save_file <.pickle_file_path> --frame_interval 0.5
+  python gen_index_file.py --frames_path <path_to_frames> --save_file <pickle_file_path> --frame_interval 0.5
   ```
   Generate k-d Trees
   ```bash
@@ -151,7 +151,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
     --index_file <index_file_path> \
     --out_path <output_path> \
     --pca_train_samp <number_of_train_samples_for_pca> \
-    --comps <thumb_pca_components fv_pca_components vgg_pca_components>
+    --comps <fv_pca_components thumb_pca_components vgg_pca_components>
   ```
   
   - `--thumb_file`, `--fv_file`, and `--vgg_file` are the paths to the .h5 files generated via [make_hdf5.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/make_hdf5.py).
@@ -162,7 +162,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
   Generate text indexes file (.pickle)
   ```bash
-  python gen_index_file.py --frames_path <path_to_test_frames> --save_file <.pickle_file_path> --frame_interval 0.5
+  python gen_index_file.py --frames_path <path_to_test_frames> --save_file <pickle_file_path> --frame_interval 0.5
   ```
   
   Generate k-d Trees
@@ -174,7 +174,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
     --index_file <index_test_file_path> \
     --out_path <output_test_path> \
     --pca_model <pca_model_path> \
-    --comps <thumb_pca_components fv_pca_components vgg_pca_components>
+    --comps <fv_pca_components thumb_pca_components vgg_pca_components>
   ```
   
   - `--thumb_file`, `--fv_file`, and `--vgg_file` are the paths to the .h5 files generated via [make_hdf5.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/make_hdf5.py).
