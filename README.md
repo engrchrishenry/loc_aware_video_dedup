@@ -1,5 +1,5 @@
 # Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking
-This is the official implementation of our IEEE TCVST 2024 paper titled [Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking](https://ieeexplore.ieee.org/document/10577179/).
+This is the official implementation of the IEEE TCVST 2024 paper titled [Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking](https://ieeexplore.ieee.org/document/10577179/).
 
 <div align="center">
   <img src="figures/overview_TCVST_2024.png" alt="Overview" width="590"/>
@@ -39,8 +39,13 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
 ## Quick Demo
 
-- Donwloaded pre-computed FIVR-200K and VCSL datasets [here]().
-- Extract 
+- Download the pre-generated FIVR-200K and VCSL datasets [here]().
+- Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml). Read the comments in the [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) for guidance on modifying the parameters.  
+- Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) as follows:
+  
+  ```bash
+  python video_retrieval.py --config <config_file_path>
+  ```
 
 
 
