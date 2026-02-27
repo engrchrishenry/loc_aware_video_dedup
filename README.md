@@ -253,17 +253,17 @@ To prepare the dataset from scratch, follow the steps below:
 
 <div align="center">
   <img src="figures/results_table_I_TCSVT_2024.png" alt="results_table_I_TCSVT_2024.png" width="580"/>
-  <p><em>Recall (%) at different K values for positve queries.</em></p>
+  <p>Recall (%) at different K values for positve queries.</p>
 </div>
 
 <div align="center">
   <img src="figures/results_table_II_TCSVT_2024.png" alt="results_table_II_TCSVT_2024.png" width="550"/>
-  <p><em>Table showing timestamp accuracy (%) at varying  tolerance values.</em></p>
+  <p>Table showing timestamp accuracy (%) at varying  tolerance values.</p>
 </div>
 
 <div align="center">
   <img src="figures/results_TCSVT_2024.png" alt="results_TCSVT_2024.png" width="500"/>
-  <p><em>Video retrieval results by our system.</em></p>
+  <p>Video retrieval results by our system.</p>
 </div>
 
 
