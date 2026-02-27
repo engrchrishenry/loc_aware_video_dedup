@@ -94,7 +94,7 @@ To prepare the dataset from scratch, follow the steps below:
   
   We used the urls in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. The UUIDs for the 6,649 videos used in our experiments are provided in [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/VCSL_available_videos.txt).
 
-  > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset and VCSL authors may help.
+  > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset and VCSL dataset authors may help.
 
 ### Extract frames.
 - FIVR-200K Dataset
