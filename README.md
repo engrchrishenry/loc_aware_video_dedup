@@ -88,7 +88,7 @@ To prepare the dataset from scratch, follow the steps below:
 ### Download Dataset
 - FIVR-200K Dataset ([Download Here](https://github.com/MKLab-ITI/FIVR-200K/tree/master))
 
-   The paper used videos categorized as "Duplicate Scene Videos (DSVs)". The dataset contains a total of 7,558 DSVs labeled as 'ND' in [annotation.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. The list of 4,960 videos used in our experiments is provided in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt).
+   The paper used videos categorized as "Duplicate Scene Videos (DSVs)". The dataset contains a total of 7,558 DSVs labeled as 'ND' and 'DS' in [annotation.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND_DS.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/youtube_ids_ND_DS.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. The list of 4,960 videos used in our experiments is provided in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt).
 
 - VCSL Dataset ([Download Here](https://github.com/alipay/VCSL/tree/main))
   
