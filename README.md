@@ -88,11 +88,11 @@ To prepare the dataset from scratch, follow the steps below:
 ### Download Dataset
 - FIVR-200K Dataset ([Download Here](https://github.com/MKLab-ITI/FIVR-200K/tree/master))
 
-   The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The datasets contains a total of 7,558 DSVs labelled as 'ND' in [annotations.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. The list of 4,960 videos used in our experiments is provided in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt).
+   The paper uses videos categorized as "Duplicate Scene Videos (DSVs)". The dataset contains a total of 7,558 DSVs labeled as 'ND' in [annotation.json](https://github.com/MKLab-ITI/FIVR-200K/blob/master/dataset/annotation.json). We provide [youtube_ids_ND.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/youtube_ids_ND.txt) which contains IDs of all DSVs. Only 4,960 DSVs were available for download at the time of writing our paper. The list of 4,960 videos used in our experiments is provided in [FIVR_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/FIVR_available_videos.txt).
 
 - VCSL Dataset ([Download Here](https://github.com/alipay/VCSL/tree/main))
   
-  We used the urls in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. The uuids for the 6,649 videos used in our experiments are provided in [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/VCSL_available_videos.txt).
+  We used the urls in [videos_url_uuid.csv](https://github.com/alipay/VCSL/blob/main/data/videos_url_uuid.csv) to download the dataset. Only 6,649 videos were available for download at the time of writing our paper. The UUIDs for the 6,649 videos used in our experiments are provided in [VCSL_available_videos.txt](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/data/VCSL_available_videos.txt).
 
   > Note: Most video links might be unavailable for download. Contacting the FIVR-200K dataset and VCSL authors may help.
 
@@ -119,9 +119,9 @@ To prepare the dataset from scratch, follow the steps below:
   ```bash
   python select_test_videos.py --data_path <path_to_frames> --save_file <output_path_with_filename>
   ```
-  Each line in the resulting .txt file will have the following format: `"video_class/video_name frame_id_1 frame_id2 ... frame_id_n"`.
+  Each line in the resulting .txt file will have the following format: `"video_class/video_name frame_id_1 frame_id_2 ... frame_id_n"`.
 
-    > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
+    > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video.py) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
 
 - Generate normal version (as mentioned in our paper)
   ```bash
@@ -164,10 +164,10 @@ To prepare the dataset from scratch, follow the steps below:
 
 - ### Fisher Vector Feature
 
-  Generate fisher vector features [MATLAB Script].
+  Generate fisher vector features (MATLAB Script).
   - Download the trained GMM model [trained_GMM_model.mat](https://mailmissouri-my.sharepoint.com/:f:/g/personal/chffn_umsystem_edu/IgBK1Ogmv9s8SLPBKsCBa4MzAW9IBIsXk2lrVQTvU9WDTiE?e=WqdRb0).
   - Modify VLFeat, trained GMM model, img_path, save_folder paths in [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/gen_fv_ft.m) from [fisher_vector_generation](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/fisher_vector_generation) folder.
-  - Run [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) in MATLAB.
+  - Run [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/gen_fv_ft.m) in MATLAB.
 
   Generate a single fisher vector feature file (.h5)
   ```bash
@@ -200,7 +200,7 @@ To prepare the dataset from scratch, follow the steps below:
 
 - ### Build test repository
 
-  Generate text indexes file (.pickle)
+  Generate test indexes file (.pickle)
   ```bash
   python gen_index_file.py --frames_path <path_to_test_frames> --save_file <pickle_file_path> --frame_interval 0.5
   ```
@@ -253,12 +253,12 @@ To prepare the dataset from scratch, follow the steps below:
 
 <div align="center">
   <img src="figures/results_table_I_TCSVT_2024.png" alt="results_table_I_TCSVT_2024.png" width="620"/>
-  <p>Recall (%) at different K values for positve queries.</p>
+  <p>Recall (%) at different K values for positive queries.</p>
 </div>
 
 <div align="center">
   <img src="figures/results_table_II_TCSVT_2024.png" alt="results_table_II_TCSVT_2024.png" width="550"/>
-  <p>Table showing timestamp accuracy (%) at varying  tolerance values.</p>
+  <p>Table showing timestamp accuracy (%) at varying tolerance values.</p>
 </div>
 
 <div align="center">
@@ -301,6 +301,4 @@ You may also explore our other work on video deduplication [here](https://ieeexp
 
 ## Contact
 In case of questions, feel free to contact at chffn@umsystem.edu or engr.chrishenry@gmail.com
-   
-     
    
