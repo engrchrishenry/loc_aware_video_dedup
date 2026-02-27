@@ -2,7 +2,7 @@
 This is the official implementation of the IEEE TCVST 2024 paper titled [Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking](https://ieeexplore.ieee.org/document/10577179/).
 
 <div align="center">
-  <img src="figures/overview_TCVST_2024.png" alt="Overview" width="590"/>
+  <img src="figures/overview_TCVST_2024.png" alt="overview_TCVST_2024.png" width="590"/>
 </div>
 
 ## Prerequisites
@@ -79,14 +79,11 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
     ------------------------------------------
   ```
 
- 
 ## Dataset Preparation
 
-<!-- ### Option 1: Use Pre-computed Data -->
+We provide the pre-generated FIVR-200K and VCSL datasets ([Click Here](https://mailmissouri-my.sharepoint.com/:f:/g/personal/chffn_umsystem_edu/IgBK1Ogmv9s8SLPBKsCBa4MzAW9IBIsXk2lrVQTvU9WDTiE?=WqdRb0)) for result reproducibility. We are unable to provide the raw video files as each video file belongs to its respective owner.
 
-<!--Download -->
-
-<!--### Option 2: Prepare dataset from scratch -->
+To prepare the dataset from scratch, follow the steps below:
 
 ### Download Dataset
 - FIVR-200K Dataset ([Download Here](https://github.com/MKLab-ITI/FIVR-200K/tree/master))
@@ -137,7 +134,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
 ## Feature Generation
 <div align="center">
-  <img src="figures/feature_generation.jpg" alt="Overview" width="680"/>
+  <img src="figures/feature_generation.jpg" alt="feature_generation.jpg" width="680"/>
 </div>
 
 - ### Thumbnail Feature
@@ -250,24 +247,25 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
   python video_retrieval.py --config <config_file_path>
   ```
   [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) can produce results for varying k values. It outputs results in .txt files in `--out_path`.
-<!--
-## Efficient Frame Retrieval via Multiple k-d Tree Setup
-The script [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py) does the following:
-- Uses the single feature files generated via [gen_single_feature_file.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/gen_single_feature_file.py) as input.
-- Trains a PCA model for each feature to reduce the feature dimension.
-- Projects the features to low-dimensional vectors using the trained PCA model.
-- Builds k-d trees via the projected features.
-- Query the k-d trees for frame retrieval.
-- Calculates the recall and average time consumption per query frame.
 
-To run this step:
-- Modify the parameters in [config_frame_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_frame_retrieval.yaml).
-- Run [frame_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/frame_retrieval.py).
-  
-  ```bash
-  python frame_retrieval.py --config <config_file_path>
-  ```
--->
+
+## Results
+
+<div align="center">
+  <img src="figures/results_table_I_TCSVT_2024.png" alt="results_table_I_TCSVT_2024.png" width="550"/>
+  <p><em>Recall (%) at different K values for positve queries.</em></p>
+</div>
+
+<div align="center">
+  <img src="figures/results_table_II_TCSVT_2024.png" alt="results_table_II_TCSVT_2024.png" width="550"/>
+  <p><em>RTable showing timestamp accuracy (%) at varying  tolerance values.</em></p>
+</div>
+
+<div align="center">
+  <img src="figures/results_TCSVT_2024.png" alt="results_TCSVT_2024.png" width="500"/>
+  <p><em>Video retrieval results by our system.</em></p>
+</div>
+
 
 ## Citation
 
