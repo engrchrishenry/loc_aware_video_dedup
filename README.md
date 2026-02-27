@@ -258,7 +258,7 @@ To prepare the dataset from scratch, follow the steps below:
 
 <div align="center">
   <img src="figures/results_table_II_TCSVT_2024.png" alt="results_table_II_TCSVT_2024.png" width="550"/>
-  <p><em>RTable showing timestamp accuracy (%) at varying  tolerance values.</em></p>
+  <p><em>Table showing timestamp accuracy (%) at varying  tolerance values.</em></p>
 </div>
 
 <div align="center">
