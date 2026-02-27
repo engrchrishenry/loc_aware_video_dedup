@@ -299,6 +299,10 @@ You may also explore our other work on video deduplication [here](https://ieeexp
   doi={10.1109/ICASSP49357.2023.10095417}}
 ```
 
+## Acknowledgement
+
+This work was supported in part by the National Science Foundation (NSF) under Award 2148382.
+
 ## Contact
 In case of questions, feel free to contact at chffn@umsystem.edu or engr.chrishenry@gmail.com
    
