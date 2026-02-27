@@ -252,7 +252,7 @@ To prepare the dataset from scratch, follow the steps below:
 ## Results
 
 <div align="center">
-  <img src="figures/results_table_I_TCSVT_2024.png" alt="results_table_I_TCSVT_2024.png" width="580"/>
+  <img src="figures/results_table_I_TCSVT_2024.png" alt="results_table_I_TCSVT_2024.png" width="620"/>
   <p>Recall (%) at different K values for positve queries.</p>
 </div>
 
