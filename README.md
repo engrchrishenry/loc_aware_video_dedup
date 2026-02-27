@@ -6,7 +6,7 @@ This is the official implementation of the IEEE TCSVT 2024 paper titled [Fast Vi
 </div>
 
 ## Prerequisites
-The code is tested on Linux with the following prerequisites:
+This code was tested on Linux with the following prerequisites:
 1. Python 3.12
 2. PyTorch 1.11.0 (CUDA 11.3)
 3. MATLAB R2021a
