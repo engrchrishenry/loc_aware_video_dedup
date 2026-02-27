@@ -262,7 +262,7 @@ To prepare the dataset from scratch, follow the steps below:
 </div>
 
 <div align="center">
-  <img src="figures/results_TCSVT_2024.png" alt="results_TCSVT_2024.png" width="500"/>
+  <img src="figures/results_TCSVT_2024.png" alt="results_TCSVT_2024.png" width="590"/>
   <p>Video retrieval results by our system.</p>
 </div>
 
