@@ -1,8 +1,8 @@
 # Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking
-This is the official implementation of the IEEE TCVST 2024 paper titled [Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking](https://ieeexplore.ieee.org/document/10577179/).
+This is the official implementation of the IEEE TCSVT 2024 paper titled [Fast Video Deduplication and Localization With Temporal Consistence Re-Ranking](https://ieeexplore.ieee.org/document/10577179/).
 
 <div align="center">
-  <img src="figures/overview_TCVST_2024.png" alt="overview_TCVST_2024.png" width="590"/>
+  <img src="figures/overview_TCSVT_2024.png" alt="overview_TCSVT_2024.png" width="590"/>
 </div>
 
 ## Prerequisites
@@ -284,7 +284,7 @@ If you use this work, please cite:
   doi={10.1109/TCSVT.2024.3420422}}
 ```
 
-You may also explore our other work on video deduplication [here](ieeexplore.ieee.org/document/10095417/). Consider citing the following:
+You may also explore our other work on video deduplication [here](https://ieeexplore.ieee.org/document/10095417/). Consider citing the following:
 
 ```bibtex
 @INPROCEEDINGS{10095417,
