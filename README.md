@@ -121,7 +121,7 @@ To prepare the dataset from scratch, follow the steps below:
   ```
   Each line in the resulting .txt file will have the following format: `"video_class/video_name frame_id_1 frame_id_2 ... frame_id_n"`.
 
-    > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_video.py) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
+    > Note: [select_test_videos.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/select_test_videos.py) requires the frames to be extracted via [extract_frames.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/extract_frames.py)
 
 - Generate normal version (as mentioned in our paper)
   ```bash
