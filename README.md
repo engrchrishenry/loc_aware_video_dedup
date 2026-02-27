@@ -39,14 +39,16 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
 ## Quick Demo
 
-- Download the pre-generated FIVR-200K and VCSL datasets [here](https://mailmissouri-my.sharepoint.com/:f:/g/personal/chffn_umsystem_edu/IgBK1Ogmv9s8SLPBKsCBa4MzAW9IBIsXk2lrVQTvU9WDTiE?e=WqdRb0)).
+- Download the pre-generated FIVR-200K and VCSL datasets ([here](https://mailmissouri-my.sharepoint.com/:f:/g/personal/chffn_umsystem_edu/IgBK1Ogmv9s8SLPBKsCBa4MzAW9IBIsXk2lrVQTvU9WDTiE?e=WqdRb0)).
 - Unzip the downloaded .zip files
   ```bash
   unzip FIVR_200K_dataset_processed.zip
   unzip VCSL_dataset_processed.zip
   ```
-- Dataset folder structure:
+  Dataset folder structure:
   
+  Filename suffix format is `<Fisher_Vector_Dimension>_<Thumbnail_Dimension>_<VGG_Dimension>`
+
       FIVR_200K_dataset_processed/VCSL_dataset_processed
       ├── features_projected                                      # Features (fisher vector, thumbnail, and VGG)
       │   ├── fv                                                  # Fisher vector features
@@ -55,16 +57,27 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
       ├── indexes                                                 # Index files
       ├── kdtrees                                                 # k-d Trees (repositories)
       └── PCA_models_trained                                      # Trained PCA models
-  Filename suffix format: `<Fisher_Vector_Dimension>_<Thumbnail_Dimension>_<VGG_Dimension>`
 - Use the provided [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) file to test on the FIVR-200K Normal Testset with `fisher vector feature dimension=128`, `thumbnail feature dimension=64`, and `VGG feature dimension=64`. Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) to test on other testsets. Read the comments in the [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) for guidance on modifying the parameters.
 - Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) as follows:
   ```bash
   python video_retrieval.py --config configs/config_video_retrieval.yaml
   ```
-- Sample result:
-  
-
-
+- Sample output in `results_all.txt` file:
+  ```text
+    k = 512, ts 10.0, tolerance 1.5
+    Avg node search time/frame = 95.0128 ms
+    Avg node search time/query = 475.0642 ms
+    Avg prune time/frame = 15.1487 ms
+    Avg prune time/query = 75.7435 ms
+    Avg total time/frame = 110.2708 ms
+    Avg total time/query = 551.3542 ms
+    Recall = 98.8
+    Timestamp accuracy at varying tolerance levels:
+      threshold=0.0   → 96.6000%
+      threshold=1.0   → 97.3000%
+      threshold=5.0   → 97.5000%
+    ------------------------------------------
+  ```
 
  
 ## Dataset Preparation
