@@ -39,13 +39,30 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 
 ## Quick Demo
 
-- Download the pre-generated FIVR-200K and VCSL datasets [here]().
-- Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml). Read the comments in the [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) for guidance on modifying the parameters.  
-- Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) as follows:
-  
+- Download the pre-generated FIVR-200K and VCSL datasets [here](https://mailmissouri-my.sharepoint.com/:f:/g/personal/chffn_umsystem_edu/IgBK1Ogmv9s8SLPBKsCBa4MzAW9IBIsXk2lrVQTvU9WDTiE?e=WqdRb0)).
+- Unzip the downloaded .zip files
   ```bash
-  python video_retrieval.py --config <config_file_path>
+  unzip FIVR_200K_dataset_processed.zip
+  unzip VCSL_dataset_processed.zip
   ```
+- Dataset folder structure:
+  
+      FIVR_200K_dataset_processed/VCSL_dataset_processed
+      ├── features_projected                                      # Features (fisher vector, thumbnail, and VGG)
+      │   ├── fv                                                  # Fisher vector features
+      │   ├── thumb                                               # Thumbnail features
+      │   └── vgg                                                 # VGG features
+      ├── indexes                                                 # Index files
+      ├── kdtrees                                                 # k-d Trees (repositories)
+      └── PCA_models_trained                                      # Trained PCA models
+  Filename suffix format: `<Fisher_Vector_Dimension>_<Thumbnail_Dimension>_<VGG_Dimension>`
+- Use the provided [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) file to test on the FIVR-200K Normal Testset with `fisher vector feature dimension=128`, `thumbnail feature dimension=64`, and `VGG feature dimension=64`. Modify the parameters in [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) to test on other testsets. Read the comments in the [config_video_retrieval.yaml](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/configs/config_video_retrieval.yaml) for guidance on modifying the parameters.
+- Run [video_retrieval.py](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/video_retrieval.py) as follows:
+  ```bash
+  python video_retrieval.py --config configs/config_video_retrieval.yaml
+  ```
+- Sample result:
+  
 
 
 
@@ -138,7 +155,7 @@ Remaining libraries are available in [requirements.txt](https://github.com/engrc
 - ### Fisher Vector Feature
 
   Generate fisher vector features [MATLAB Script].
-  - Download the trained GMM model [trained_GMM_model.mat](https://mailmissouri-my.sharepoint.com/:u:/g/personal/chffn_umsystem_edu/IQBzyZ_xdtdrSZqW3noZWlj7AQBpr8ZCxQ1SWm-PCCfGLgI?e=66hrQc).
+  - Download the trained GMM model [trained_GMM_model.mat](https://mailmissouri-my.sharepoint.com/:f:/g/personal/chffn_umsystem_edu/IgBK1Ogmv9s8SLPBKsCBa4MzAW9IBIsXk2lrVQTvU9WDTiE?e=WqdRb0).
   - Modify VLFeat, trained GMM model, img_path, save_folder paths in [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/gen_fv_ft.m) from [fisher_vector_generation](https://github.com/engrchrishenry/loc_aware_video_dedup/tree/main/fisher_vector_generation) folder.
   - Run [gen_fv_ft.m](https://github.com/engrchrishenry/loc_aware_video_dedup/blob/main/fisher_vector_generation/extract_fv_sift_direct.m) in MATLAB.
 
