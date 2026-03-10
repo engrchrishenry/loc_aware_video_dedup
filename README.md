@@ -5,6 +5,28 @@ This is the official implementation of the IEEE TCSVT 2024 paper titled [Fast Vi
   <img src="figures/overview_TCSVT_2024.png" alt="overview_TCSVT_2024.png" width="590"/>
 </div>
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Quick Demo](#quick-demo)
+- [Dataset Preparation](#dataset-preparation)
+  - [Download Dataset](#download-dataset)
+  - [Extract Frames](#extract-frames)
+  - [Generate Test Data](#generate-test-data)
+- [Feature Generation](#feature-generation)
+  - [Thumbnail Feature](#thumbnail-feature)
+  - [VGG Feature](#vgg-feature)
+  - [Fisher Vector Feature](#fisher-vector-feature)
+- [Build Repository (k-d Trees)](#build-repository-k-d-trees)
+  - [Build Repository](#build-repository)
+  - [Build Test Repository](#build-test-repository)
+- [Video Retrieval with Localization](#video-retrieval-with-localization)
+- [Results](#results)
+- [Citation](#citation)
+- [Acknowledgement](#acknowledgement)
+- [Contact](#contact)
+
 ## Prerequisites
 This code was tested on Linux with the following prerequisites:
 1. Python 3.12.12
